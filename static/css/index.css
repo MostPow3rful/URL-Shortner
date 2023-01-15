@@ -1,0 +1,136 @@
+body {
+  background-color: #0e0b2b;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #0e0b2b;
+  border-bottom: 0.2px solid #fff;
+}
+.left h1 {
+  padding: 15px;
+  margin: 0 8rem;
+  color: #fff;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.content {
+  margin: 4rem 8rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.img {
+  width: 500px;
+}
+.left-c {
+  margin-top: 9.5rem;
+}
+.title {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 45px;
+}
+.sub-title {
+  color: #fff;
+  font-size: 18px;
+  opacity: 0.7;
+  font-family: sans-serif;
+}
+.btn {
+  height: 47px;
+  width: 110px;
+  background-color: #5cc9a7;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-left: 2px;
+}
+.box {
+  width: 420px;
+  height: 45px;
+  padding-left: 20px;
+  border-radius: 6px;
+  border: none;
+  position: relative;
+}
+.box:focus {
+  border: none;
+}
+.frm {
+  height: 47px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frm2 {
+  margin-bottom: 1rem;
+  height: 45px;
+}
+
+.box2 {
+  width: 300px;
+  height: 45px;
+  padding-left: 20px;
+  border-radius: 6px;
+  border: none;
+}
+@media screen and (max-width: 1200px) {
+  .img {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .img {
+    display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .left {
+    text-align: center;
+  }
+
+  .btn {
+    text-align: center;
+    height: 37px;
+    width: 75px;
+    background-color: #5cc9a7;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 9px;
+    font-family: sans-serif;
+    margin-left: 2px;
+  }
+  .box {
+    width: 300px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+    position: relative;
+  }
+  .frm {
+    text-align: center;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .frm2 {
+    margin-bottom: 0;
+  }
+  .box2 {
+    width: 150px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+  }
+}

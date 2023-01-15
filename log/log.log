@@ -1,0 +1,20 @@
+[?] Information -> 2023/01/16 00:51:08 config.init() -> Flags Setuped
+[!] Error -> 2023/01/16 00:51:08 config.DatabaseStatus() -> MySQL Dosn't Response
+[?] Information -> 2023/01/16 00:51:16 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 00:51:16 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:04:18 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:04:18 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:05:31 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:05:31 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:05:56 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:05:56 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:06:28 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:06:28 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:07:00 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:07:00 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:07:32 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:07:32 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:08:41 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:08:41 config.DatabaseStatus() -> MySQL Is Ready To Use
+[?] Information -> 2023/01/16 02:10:33 config.init() -> Flags Setuped
+[?] Information -> 2023/01/16 02:10:33 config.DatabaseStatus() -> MySQL Is Ready To Use
