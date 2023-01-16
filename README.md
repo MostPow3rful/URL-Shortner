@@ -89,4 +89,4 @@
 - There Is No Commit Beacuse My Git F*cked Up !
 
 ## 📹 Watch Below Video
-    asciinema rec
+[![asciicast](https://asciinema.org/a/BYtBEu8w8nuKWEKd0t2VJFZwH.svg)](https://asciinema.org/a/BYtBEu8w8nuKWEKd0t2VJFZwH)
