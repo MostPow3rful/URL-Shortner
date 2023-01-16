@@ -17,7 +17,7 @@ func RootHandler(c *fiber.Ctx) error {
 }
 
 func RoothandlerMW(c *fiber.Ctx) error {
-	var path string = string(c.Request().URI().Path())[0:4]
+	var path string = string(c.Request().URI().Path())
 
 	if (len(path) >= 4) && (path[0:4] == "/go/") {
 		c.Next()
