@@ -7,6 +7,7 @@ import (
 	"github.com/JesusKian/URL-Shortner/src/route"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 func init() {
@@ -22,6 +23,7 @@ func main() {
 		})
 	)
 
+	app.Use(logger.New())
 	app.Static("/static", "./static")
 
 	app.Use(route.RoothandlerMW)
