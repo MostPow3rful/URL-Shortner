@@ -8,7 +8,7 @@ var (
 	whiteList []string = []string{
 		"/",
 		"/register",
-		"/reslt",
+		"/result",
 	}
 )
 
