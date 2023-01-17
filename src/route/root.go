@@ -20,14 +20,13 @@ func RoothandlerMW(c *fiber.Ctx) error {
 	var path string = string(c.Request().URI().Path())
 
 	if (len(path) >= 4) && (path[0:4] == "/go/") {
-		c.Next()
+		return c.Next()
 	}
 
 	for _, whitePath := range whiteList {
 		if path == whitePath {
-			c.Next()
+			return c.Next()
 		}
-
 	}
 
 	return fiber.NewError(404, "Invalid Path !")

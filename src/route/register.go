@@ -24,11 +24,12 @@ func RegisterHandlerPost(c *fiber.Ctx) error {
 		})
 	}
 
+	uniqueID := config.Generator()
 	_, err = config.Database.Query(`
 	INSERT INTO data
 	(Title, URL, ID)
 	VALUES
-	(?, ?, ?)`, Data.Title, Data.Url, config.Generator())
+	(?, ?, ?)`, Data.Title, Data.Url, uniqueID)
 
 	if err != nil {
 		config.SetLog("E", "route.RegisterHandlerMw() -> Couldn't Add Data In Database")
