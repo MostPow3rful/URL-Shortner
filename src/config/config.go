@@ -27,13 +27,13 @@ var (
 	// Log Info
 	flags = log.Lshortfile
 	// Sturct For Information Log
-	infoLog = log.New(os.Stdout, "[?] Information -> ", flags)
+	infoLog = log.New(os.Stdout, "[INFO] ", flags)
 	// Sturct For Warning Log
-	warnLog = log.New(os.Stdout, "[*] Warning -> ", flags)
+	warnLog = log.New(os.Stdout, "[WARN] ", flags)
 	// Sturct For Error Log
-	errorLog = log.New(os.Stdout, "[!] Error -> ", flags)
+	ErrorLog = log.New(os.Stdout, "[ERROR] ", flags)
 	// Struct For Default Log
-	defaultLog = log.New(os.Stderr, "[#] Default Log -> ", flags)
+	defaultLog = log.New(os.Stderr, "[SYS] ", flags)
 )
 
 func Generator() string {
