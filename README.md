@@ -32,8 +32,8 @@
 - name : Error Handler
     - Descripion : Custom Error Handler For [ MethodNotAllowed , InvalidPath ]
 
-- name : Delete Time
-    - Description : You Can Add Delete Time
+- name : Expire Time
+    - Description : You Can Add Expire Time
     - Format : Hour
 
 - name : Security
