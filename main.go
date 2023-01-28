@@ -1,21 +1,24 @@
 package main
 
 import (
-	"log"
-
-	"github.com/JesusKian/URL-Shortner/src/config"
 	"github.com/JesusKian/URL-Shortner/src/route"
+	"github.com/JesusKian/URL-Shortner/src/sql"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/template/html"
+	"github.com/gofiber/fiber/v2/middleware/etag"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/template/html"
+
+	"log"
 )
 
 func init() {
-	config.ConnectToSqlDatabase()
-	config.DatabaseStatus()
+	sql.ConnectToSqlDatabase()
+	sql.DatabaseStatus()
 }
 
 func main() {
+	const VERSION string = "2.0"
+
 	var (
 		engine *html.Engine = html.New("./static/html", ".html")
 		app    *fiber.App   = fiber.New(fiber.Config{
@@ -23,14 +26,20 @@ func main() {
 		})
 	)
 
-	app.Use(logger.New())
 	app.Static("/static", "./static")
 
-	app.Use(route.RoothandlerMW)
+	// Registered Middlewares
+	app.Use(logger.New())
+	app.Use(etag.New())
+	app.Use(route.PathHandler)
+
+	// Paths With GET Method
 	app.Get("/", route.RootHandler)
-	app.Post("/register", route.RegisterHandlerPost)
 	app.Get("/result", route.ResultHandlerGet)
-	app.Get("/go/:id", route.GoHandlerGet)
+	app.Get("/go/:id<str>", route.GoHandlerGet)
+
+	// Paths With POST Method
+	app.Post("/shortner", route.ShortnerHandlerPost)
 
 	log.Fatal(app.Listen(":8569"))
 }
