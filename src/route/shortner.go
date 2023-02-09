@@ -34,7 +34,9 @@ func ShortnerHandlerPost(c *fiber.Ctx) error {
 	INSERT INTO data
 	(Title, URL, ID, Expire)
 	VALUES
-	(?, ?, ?, ?)`, Data.Title, Data.Url, Data.UniqueID, Data.Expire)
+	(?, ?, ?, ?)`,
+		Data.Title, Data.Url, Data.UniqueID, Data.Expire,
+	)
 
 	if err != nil {
 		config.SetLog("E", "route.ShortnerHandlerMw() -> Couldn't Add Data In Database")

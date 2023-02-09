@@ -10,19 +10,20 @@ import (
 var (
 	key       string = ""
 	nowExpire string = ""
+	id        string = ""
 )
 
 func GoHandlerGet(c *fiber.Ctx) error {
 	key = c.Params("id")
 
-	result, err := sql.Database.Query("SELECT URL,Expire from data where ID=?", key)
+	result, err := sql.Database.Query("SELECT URL,Expire,ID from data where ID=?", key)
 	if err != nil {
 		config.SetLog("E", "route.GoHandlerGet() -> Couldn't Get URL")
 		config.SetLog("D", err.Error())
 	}
 
 	for result.Next() {
-		err = result.Scan(&url, &nowExpire)
+		err = result.Scan(&url, &nowExpire, &id)
 
 		if err != nil {
 			config.SetLog("E", "route.GoHandlerGet() -> Couldn't Scan Result Of Query")
@@ -39,6 +40,8 @@ func GoHandlerGet(c *fiber.Ctx) error {
 	if timer.CheckExpire(nowExpire) == true {
 		return c.Redirect(url)
 	}
+
+	sql.RemoveURL(id)
 
 	return c.Status(fiber.StatusNotFound).Render("error", fiber.Map{
 		"Message": "Entered URL Have Been Expired !",

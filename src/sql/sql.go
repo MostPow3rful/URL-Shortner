@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/JesusKian/URL-Shortner/src/config"
+	// "github.com/JesusKian/URL-Shortner/src/route"
 	"github.com/JesusKian/URL-Shortner/src/structure"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
@@ -44,6 +45,14 @@ func DatabaseStatus() {
 		config.ErrorLog.Fatal(err)
 	}
 	config.SetLog("I", "sql.DatabaseStatus() -> MySQL Is Ready To Use")
+}
+
+func RemoveURL(ID string) {
+	_, err = Database.Query("DELETE FROM data WHERE ID=?", ID)
+	if err != nil {
+		config.SetLog("E", fmt.Sprintf("sql.RemoveURL() -> Couldn't Remove Row With ID=%s", ID))
+		config.SetLog("D", err.Error())
+	}
 }
 
 func init() {
