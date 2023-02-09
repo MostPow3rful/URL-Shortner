@@ -4,17 +4,8 @@ import (
 	"fmt"
 
 	"github.com/JesusKian/URL-Shortner/src/config"
-	"github.com/JesusKian/URL-Shortner/src/structure"
+	"github.com/JesusKian/URL-Shortner/src/sql"
 	"github.com/gofiber/fiber/v2"
-)
-
-var (
-	err      error           = nil
-	Channels                 = make(chan string, 3)
-	Data     *structure.Data = &structure.Data{
-		Title: "Default-Title",
-		Url:   "Default-Title",
-	}
 )
 
 func RegisterHandlerPost(c *fiber.Ctx) error {
@@ -25,7 +16,7 @@ func RegisterHandlerPost(c *fiber.Ctx) error {
 	}
 
 	uniqueID := config.Generator()
-	_, err = config.Database.Query(`
+	_, err = sql.Database.Query(`
 	INSERT INTO data
 	(Title, URL, ID)
 	VALUES
